@@ -1,0 +1,1 @@
+This repo contains solutions in c++ for project euler problems on hackerrank.
