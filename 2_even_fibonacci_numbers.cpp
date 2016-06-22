@@ -13,7 +13,17 @@ int main() {
 
     while(t--)
     {
-    	
+    	long long int n,a=1,b=2,temp,sum=0;
+    	scanf("%lld",&n);
+    	for(;b<n;)
+    	{
+    		if(b%2==0)
+    			sum+=b;
+    		temp = b;
+    		b=a+b;
+    		a=temp;
+    	}
+    	printf("%lld\n",sum);
     }
 
     return 0;
