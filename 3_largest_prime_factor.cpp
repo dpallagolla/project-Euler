@@ -1,61 +1,39 @@
-#include <cmath>
-#include <cstdio>
-#include <vector>
 #include <iostream>
-#include <string.h>
 #include <algorithm>
+#include <cmath>
 using namespace std;
-
-// this solution currently gives wrong answer for 5th testcase.
-int main() {
-    
-    long long int n=1000009;
-	bool primes[n+1];
-
-	memset(primes,true,sizeof(primes));
-
-	long long int i,j,k;
-
-	for(i=2;i*i<=n;i++)
-	{
-		if(primes[i]==true)
-		{
-			for(j=i*2;j<=n;j+=i)
-				primes[j]=false;
-		}
-	}
-
-
-	vector<long long int> primeArray;
-	// long long int primeArray[n+1];
-	// j=0;
-	for(i=2;i<=n;i++)
-	{
-		if(primes[i])
-		{
-			primeArray.push_back(i);			
-		}
-	}
-
-	
-
-	int t;
-	long long int input;
-	scanf("%d",&t);
-
-	while(t--)
-	{
-		scanf("%lld",&input);
-		
-		for(vector<long long int>::reverse_iterator rit=primeArray.rbegin();rit!=primeArray.rend();rit++)
-		{
-			if(input%(*rit)==0)
-			{
-				printf("%lld\n",*rit);
-				break;
-			}
-		}
-	}
-
+int main(){
+    int t;
+    cin>>t;
+    unsigned long long n,max,count,fac;
+    bool x;
+    while(t--){
+        max=1;
+        cin>>n;
+        x=0;
+    while (n%2 == 0)
+            {
+                n=n/2;
+                x=1;
+            }
+        if(x) max=2;
+        
+    for (fac = 3; fac<= sqrt(n)+2; fac = fac+2)
+    {
+                x=0;
+                while (n%fac == 0)
+                {
+                    x=1;
+                    n=n/fac;
+                    
+                }
+                if(x) if(fac>max) max=fac;  
+   }
+   if (n > 2){
+                if(n>max) max=n;
+            } 
+                
+     cout<<max<<endl;       
+    }
     return 0;
 }
