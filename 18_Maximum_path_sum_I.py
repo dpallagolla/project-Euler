@@ -1,6 +1,5 @@
 import os
 
-
 t = int(raw_input())
 
 while(t!=0):
