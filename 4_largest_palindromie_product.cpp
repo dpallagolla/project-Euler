@@ -15,12 +15,12 @@ bool palin(ll n)
         s=s*10+p%10;
         p=p/10;
     }
-    if(s==n)
+    if(s==n) // is a palindrome
         return true;
     return false;
 }
 int main() {
-    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+  
     ll i,j,k=0,p,n,t;
     cin>>t;
     while(t--)
@@ -37,7 +37,7 @@ int main() {
                     break;
                 if(i*j<n)
                     {
-                    if(palin(i*j))
+                    if(palin(i*j)) // i*j is a palindrome
                         {
                         k=max(k,(i*j));
                        
